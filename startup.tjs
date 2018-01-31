@@ -1,0 +1,16 @@
+Plugins.link("OpenGLESPlugin.dll");
+class CanvasWindow extends Window {
+	var gl:OpenGLESSample;
+	function CanvasWindow(width,height) {
+		super.Window();
+		setInnerSize( width, height );
+		gl = new OpenGLESSample();
+	}
+	function onDraw() {
+		gl.draw();
+	}
+}
+var window = new CanvasWindow( 640, 480 );
+window.visible = true;
+
+
